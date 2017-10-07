@@ -1,0 +1,25 @@
+---
+title: "If statements exercise 5"
+author: "Fangzhou Yang"
+date: "10/05/2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Question 4
+**If statements: section 4.1.2, exercises 5**
+
+```{r}
+mortgage<-function(n,P,open){
+  if(open==TRUE){
+    return((0.005*P)/(1-((1.005)^(-n))))
+  }
+  else{
+    return((0.004*P)/(1-((1.004)^(-n))))
+  }
+}
+```
+

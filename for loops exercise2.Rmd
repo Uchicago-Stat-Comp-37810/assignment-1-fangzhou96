@@ -1,0 +1,47 @@
+---
+title: 'For loops exercise 2'
+author: "Fangzhou Yang"
+date: "10/03/2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Question 1
+**For loops: section 4.1.1, exercises 2**
+
+#(a)
+```{r}
+Fibonacci <- numeric(31)
+Fibonacci[1] <- Fibonacci[2] <- 1
+for (i in 3:31) Fibonacci[i] <- Fibonacci[i - 2] + Fibonacci[i - 1]
+
+ratio<-numeric(30)
+for (i in 1:30) ratio[i] <- Fibonacci[i +1] / Fibonacci[i]
+cat("The sequence is:",ratio)
+```
+
+Yes, the sequence Seems converge to 1.618034.
+
+
+#(b)
+```{r}
+golden_ratio = (1+sqrt(5))/2
+print(golden_ratio)
+
+```
+
+Yes, the sequence is converging to the golden ratio.
+
+#Proof
+The golden ratio function is shown as:
+$$1+1/\phi=\phi$$
+in part (a), we get the Fibonacci sequence f<sub>n</sub>, and calculate the ratio of f<sub>n</sub>/f<sub>n-1</sub>. Since for a Fibonacci sequence, f<sub>n</sub> = f<sub>n-1</sub> + f<sub>n-2</sub>,
+So the ratio is:
+$$r_n =f_n/f_{n-1}=(f_{n-1}+f_{n-2})/f_{n-1}=1+f_{n-2}/f_{n-1}=1+1/r_{n-1}$$
+$$r_n-\phi=1+1/r_{n-1}-1-1/\phi=1/r_{n-1}-1/\phi=(\phi-r_{n-1})/(r_{n-1}\phi)$$
+So as n goes to infinity, the value (r<sub>n</sub> -  ¦Õ) goes to 0.
+
+Therefore the ratio is converging to  ¦Õ, which equals $$(\sqrt{5}+1)/2 = 1.618034$$.
