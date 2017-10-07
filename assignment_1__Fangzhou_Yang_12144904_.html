@@ -480,20 +480,20 @@ hornerpoly&lt;-function(x,c){
 }
 system.time(directpoly(x=seq(-10, 10, length=5000000), c(1, -2, 2, 3, 4, 6, 7)))</code></pre>
 <pre><code>##    user  system elapsed 
-##    2.12    0.12    2.27</code></pre>
+##    1.99    0.08    2.06</code></pre>
 <pre class="r"><code>system.time(hornerpoly(x=seq(-10, 10, length=5000000), c(1, -2, 2, 3, 4, 6, 7)))</code></pre>
 <pre><code>##    user  system elapsed 
-##    0.55    0.23    0.78</code></pre>
+##    0.50    0.24    0.73</code></pre>
 <p>From the process, we can see that the hornerpoly method is much quicker than the directpoly. The system processing time of directpoly is 1.92, 0.10, 2.03, and time of hornorpoly is 0.74,0.22,0.96 which is much quicker.</p>
 </div>
 <div id="b-4" class="section level1">
 <h1>(b)</h1>
 <pre class="r"><code>system.time(directpoly(x=seq(-10, 10, length=5000000), c(2, 17, -3)))</code></pre>
 <pre><code>##    user  system elapsed 
-##    0.34    0.08    0.42</code></pre>
+##    0.57    0.00    0.58</code></pre>
 <pre class="r"><code>system.time(hornerpoly(x=seq(-10, 10, length=5000000), c(2, 17, -3)))</code></pre>
 <pre><code>##    user  system elapsed 
-##    0.14    0.14    0.28</code></pre>
+##    0.22    0.06    0.28</code></pre>
 <p>Both method could process quickly when the number of polynomial coefficients is smaller. But the system processing time of hornoerpoly method is still faster than the directpoly method.</p>
 </div>
 
